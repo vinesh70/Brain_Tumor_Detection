@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection Result</title>
+    <link href="{{ url_for('static', filename='css/result.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Tumor Detection Result</h1>
+        <div class="result-container">
+            {% if class_label %}
+                <div class="prediction">
+                    <h2>Predicted Tumor:</h2>
+                    <p>{{ class_label }}</p>
+                </div>
+                <div class="download-pdf">
+                    <a href="/download_pdf" class="btn" download>Download PDF</a>
+                </div>
+            {% elif error %}
+                <p class="error">{{ error }}</p>
+            {% endif %}
+        </div>
+        <a href="/" class="btn">Go Back</a>
+    </div>
+</body>
+</html>

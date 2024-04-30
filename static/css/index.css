@@ -1,0 +1,92 @@
+/* Body styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Container styles */
+.container {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* Box shadow for a 3D effect */
+    transform: translateZ(0); /* Force hardware acceleration for smoother rendering */
+}
+
+/* Header styles */
+h1 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px; /* Add space below the heading */
+}
+
+/* Content styles */
+.content {
+    line-height: 1.6; /* Increase line height for better readability */
+}
+
+/* List styles */
+ul {
+    list-style-type: none; /* Remove bullet points */
+    padding-left: 20px; /* Add left padding for list items */
+}
+
+/* List item styles */
+li {
+    margin-bottom: 10px; /* Add space below each list item */
+}
+
+/* Custom file input styles */
+input[type="file"] {
+    display: none;
+}
+
+.custom-file-label {
+    display: inline-block;
+    padding: 10px 15px;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.custom-file-label:hover {
+    background-color: #0056b3;
+}
+
+/* Image preview container styles */
+.preview-container {
+    text-align: center; /* Center align the preview container */
+}
+
+/* Image preview styles */
+#image-preview {
+    max-width: 100%; /* Ensure the image fits within the container */
+    border-radius: 8px; /* Add border radius to the image */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add shadow to the image */
+}
+
+/* Button styles */
+.btn {
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    text-align: center;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

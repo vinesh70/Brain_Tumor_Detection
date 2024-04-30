@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Tumor Detection</title>
+    <link href="{{ url_for('static', filename='css/index.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Brain Tumor Detection</h1>
+        <div class="content">
+            <p>Welcome to our Brain Tumor Detection System. Brain tumors are abnormal growths of tissue within the brain. They can be benign (non-cancerous) or malignant (cancerous) and can affect various parts of the brain.</p>
+            <p>Common types of brain tumors include:</p>
+            <ul>
+                <li><strong>1) Glioma Tumor:</strong> These tumors arise from glial cells and can be found in the brain or spinal cord. They include astrocytomas, oligodendrogliomas, and ependymomas.</li>
+                <li><strong>2) Meningioma Tumor:</strong> Meningiomas form in the meninges, the thin layers of tissue that cover the brain and spinal cord. They are usually benign and slow-growing.</li>
+                <li><strong>3) Pituitary Tumor:</strong> Pituitary tumors develop in the pituitary gland, a small gland located at the base of the brain. They can cause hormonal imbalances and affect various bodily functions.</li>
+            </ul>
+            <p>Early detection and diagnosis of brain tumors are crucial for effective treatment and improved outcomes. Upload an MRI image of your brain below for accurate detection.</p>
+        </div>
+        <form action="/predict" method="post" enctype="multipart/form-data" id="upload-form" onsubmit="return validateForm()">
+            <div class="form-group">
+                <input type="file" name="file" id="file" accept="image/*" onchange="previewImage(event)">
+                <center><label for="file" class="custom-file-label">Choose an MRI Image</label></center>
+            </div>
+            <div class="preview-container" id="preview-container">
+                <center><img id="image-preview" src="#" style="display: none;"></center>
+            </div>
+            <button type="submit" class="btn">Predict</button>
+        </form>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var input = event.target;
+            var preview = document.getElementById('image-preview');
+            var previewContainer = document.getElementById('preview-container');
+
+            var reader = new FileReader();
+            reader.onload = function() {
+                preview.src = reader.result;
+                preview.style.display = 'block'; // Show preview image
+                previewContainer.style.display = 'block'; // Show preview container
+            };
+            reader.readAsDataURL(input.files[0]);
+        }
+
+        function validateForm() {
+            var fileInput = document.getElementById('file');
+            if (fileInput.files.length === 0) {
+                alert('Please select an image.');
+                return false;
+            }
+            return true;
+        }
+    </script>
+</body>
+</html>
